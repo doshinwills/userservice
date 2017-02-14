@@ -18,7 +18,7 @@ public interface UserService {
 	@Path("/save")
 	@Produces(MediaType.APPLICATION_XML)
 	@Consumes(MediaType.APPLICATION_XML)
-	public void save(UserVO user);
+	public UserVO save(UserVO user);
 
 	@POST
 	@Path("/update")

@@ -4,7 +4,7 @@ import com.doshin.service.user.dao.model.UserDO;
 
 public interface UserDao {
 
-	void save(UserDO user);
+	Integer save(UserDO user);
 
 	void update(UserDO user);
 

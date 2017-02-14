@@ -18,6 +18,25 @@ public class UserVO {
 
 	private String password;
 
+	public UserVO() {
+		super();
+	}
+
+	public UserVO(int id, String usertype, String firstname, String lastname, String address, String username,
+			String password) {
+		super();
+		if(id != 0)
+			this.id = id;
+		this.usertype = usertype;
+		this.firstname = firstname;
+		this.lastname = lastname;
+		this.address = address;
+		this.username = username;
+		this.password = password;
+	}
+
+
+
 	public int getId() {
 		return id;
 	}
@@ -26,7 +45,6 @@ public class UserVO {
 		this.id = id;
 	}
 
-	
 	public String getUsertype() {
 		return usertype;
 	}
@@ -42,7 +60,7 @@ public class UserVO {
 	public void setFirstname(String firstname) {
 		this.firstname = firstname;
 	}
-	
+
 	public String getLastname() {
 		return lastname;
 	}
@@ -50,7 +68,7 @@ public class UserVO {
 	public void setLastname(String lastname) {
 		this.lastname = lastname;
 	}
-	
+
 	public String getAddress() {
 		return address;
 	}
@@ -58,7 +76,7 @@ public class UserVO {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	
+
 	public String getUsername() {
 		return username;
 	}
@@ -66,7 +84,7 @@ public class UserVO {
 	public void setUsername(String username) {
 		this.username = username;
 	}
-	
+
 	public String getPassword() {
 		return password;
 	}
@@ -80,7 +98,5 @@ public class UserVO {
 		return "UserVO [id=" + id + ", userType=" + usertype + ", firstname=" + firstname + ", lastname=" + lastname
 				+ ", address=" + address + ", username=" + username + ", password=" + password + "]";
 	}
-	
-	
 
 }

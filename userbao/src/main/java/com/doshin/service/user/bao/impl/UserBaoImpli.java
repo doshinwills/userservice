@@ -18,11 +18,10 @@ public class UserBaoImpli implements UserBao {
 	@Autowired
 	UserDao userDao;
 
-	public void save(UserVO user) {
+	public UserVO save(UserVO user) {
 		UserDO userDo = new UserDO();
 		BeanUtils.copyProperties(user, userDo);
-		userDao.save(userDo);
-
+		return findByUserId(userDao.save(userDo));
 	}
 
 	public void update(UserVO user) {
