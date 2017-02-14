@@ -1,0 +1,42 @@
+mvn archetype:generate \
+-DarchetypeGroupId=org.codehaus.mojo.archetypes \
+-DarchetypeArtifactId=pom-root \
+-DarchetypeVersion=RELEASE
+
+com.doshin.service
+userservice
+1.0-SNAPSHOT:
+com.doshin.service.user
+
+mvn archetype:generate \
+-DarchetypeGroupId=org.apache.maven.archetypes \
+-DarchetypeArtifactId=maven-archetype-quickstart \
+-DarchetypeVersion=RELEASE
+
+
+com.doshin.service
+userserviceapi
+com.doshin.service.user.api
+
+com.doshin.service
+userdao
+com.doshin.service.user.bao
+
+com.doshin.service
+userbao
+com.doshin.service.user.bao
+
+com.doshin.service
+userserviceimpl
+com.doshin.service.user.impl
+
+mvn archetype:generate \
+-DarchetypeGroupId=org.apache.maven.archetypes \
+-DarchetypeArtifactId=maven-archetype-webapp \
+-DarchetypeVersion=RELEASE
+
+
+com.doshin.service
+userserviceweb
+com.doshin.service.user.web
+

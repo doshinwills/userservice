@@ -1,0 +1,10 @@
+
+
+<user>
+<userType>ADMIN</password>
+<firstname>Doshin</firstname>
+<lastname>Wills</lastname>
+<address>39800 Fremont Blvd</address>
+<username>gwills</username>
+<password>test</password>
+</user>
