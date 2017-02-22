@@ -1,13 +1,34 @@
-
 http://localhost:8080/userserviceweb/rest/user/save
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <user>
-	<address>39800 Fremont</address>
-	<firstname>Doshin</firstname>
-	<lastname>Wills</lastname>
-	<password>pass</password>
-	<username>gwills</username>
-	<usertype>Admin</usertype>
+	<createdOn>2017-02-22T00:00:00-08:00</createdOn>
+	<firstName>Mary Ann</firstName>
+	<groupList>
+		<createdOn>2017-02-22T00:00:00-08:00</createdOn>
+		<groupId>1</groupId>
+		<name>group1</name>
+		<rightList>
+			<createdOn>2017-02-22T00:00:00-08:00</createdOn>
+			<name>right1</name>
+			<rightId>1</rightId>
+			<updatedOn>2017-02-22T00:00:00-08:00</updatedOn>
+		</rightList>
+		<rightList>
+			<createdOn>2017-02-22T00:00:00-08:00</createdOn>
+			<name>right1</name>
+			<rightId>2</rightId>
+			<updatedOn>2017-02-22T00:00:00-08:00</updatedOn>
+		</rightList>
+		<updatedOn>2017-02-22T00:00:00-08:00</updatedOn>
+	</groupList>
+	<lastName>Doshin</lastName>
+	<name>Mary Ann Doshin</name>
+	<updatedOn>2017-02-22T00:00:00-08:00</updatedOn>
+	<userPassword>
+		<createdOn>2017-02-22T00:00:00-08:00</createdOn>
+		<password>new pass</password>
+		<updatedOn>2017-02-22T00:00:00-08:00</updatedOn>
+	</userPassword>
 </user>
 
 http://localhost:8080/userserviceweb/rest/user/update

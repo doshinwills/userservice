@@ -2,8 +2,9 @@
 drop table public.groupright;
 drop table public.right;
 drop table public.group;
-drop table public.userpassword;
 drop table public.user;
+drop table public.userpassword;
+
 
 CREATE TABLE public.userpassword (
 	passwordid integer NOT NULL UNIQUE,
@@ -54,8 +55,6 @@ CREATE TABLE public.groupright (
 CREATE TABLE public.usergroup (
 	groupid integer NOT NULL,
 	userid integer NOT NULL ,
-	createdon date NOT NULL,
-	updatedon date NOT NULL,
 	PRIMARY KEY (groupid, userid),
 	FOREIGN KEY (groupid) REFERENCES public.group(id),
 	FOREIGN KEY (userid) REFERENCES public.user(userid)

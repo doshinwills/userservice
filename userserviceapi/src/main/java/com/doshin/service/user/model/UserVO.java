@@ -1,6 +1,8 @@
 package com.doshin.service.user.model;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -20,12 +22,14 @@ public class UserVO {
 
 	UserPasswordVO userPassword = new UserPasswordVO();
 
+	List<GroupVO> groupList = new ArrayList<GroupVO>();
+
 	public UserVO() {
 		super();
 	}
 
 	public UserVO(Integer userId, String name, String firstName, String lastName, Date createdOn, Date updatedOn,
-			UserPasswordVO userPassword) {
+			UserPasswordVO userPassword, List<GroupVO> groupList) {
 		super();
 		this.userId = userId;
 		this.name = name;
@@ -34,6 +38,7 @@ public class UserVO {
 		this.createdOn = createdOn;
 		this.updatedOn = updatedOn;
 		this.userPassword = userPassword;
+		this.groupList = groupList;
 	}
 
 	public Integer getUserId() {
@@ -41,7 +46,7 @@ public class UserVO {
 	}
 
 	public void setUserId(Integer id) {
-		this.userId = userId;
+		this.userId = id;
 	}
 
 	public String getName() {
@@ -92,10 +97,19 @@ public class UserVO {
 		this.userPassword = userPassword;
 	}
 
+	public List<GroupVO> getGroupList() {
+		return groupList;
+	}
+
+	public void setGroupList(List<GroupVO> groupList) {
+		this.groupList = groupList;
+	}
+
 	@Override
 	public String toString() {
 		return "UserVO [userId=" + userId + ", name=" + name + ", firstName=" + firstName + ", lastName=" + lastName
-				+ ", createdOn=" + createdOn + ", updatedOn=" + updatedOn + ", userPassword=" + userPassword + "]";
+				+ ", createdOn=" + createdOn + ", updatedOn=" + updatedOn + ", userPassword=" + userPassword
+				+ ", groupList=" + groupList + "]";
 	}
 
 }

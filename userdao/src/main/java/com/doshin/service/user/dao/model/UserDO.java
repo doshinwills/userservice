@@ -1,6 +1,7 @@
 package com.doshin.service.user.dao.model;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -8,6 +9,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -16,6 +19,14 @@ import org.hibernate.annotations.GenericGenerator;
 @Entity
 @Table(name = "user", schema="public")
 public class UserDO {
+
+	public List<GroupDO> getGroupList() {
+		return groupList;
+	}
+
+	public void setGroupList(List<GroupDO> groupList) {
+		this.groupList = groupList;
+	}
 
 	@Id
 	@Column(name = "userid")
@@ -41,6 +52,12 @@ public class UserDO {
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "passwordid")
 	UserPasswordDO userPassword;
+	
+	@OneToMany(cascade = CascadeType.ALL)
+	@JoinTable(name="usergroup", 
+		joinColumns=@JoinColumn(name="userid"),
+		inverseJoinColumns=@JoinColumn(name="groupid"))
+	List<GroupDO> groupList;
 
 	public Integer getUserId() {
 		return userId;

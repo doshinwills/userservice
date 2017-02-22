@@ -20,8 +20,9 @@ public class UserDaoImpli implements UserDao {
 		return sessionFactory.getCurrentSession();
 	}
 
-	public Integer save(UserDO user) {
-		return (Integer) getSession().save(user);
+	public UserDO save(UserDO user) {
+		getSession().saveOrUpdate(user);
+		return user;
 	}
 
 	public void update(UserDO ptsUser) {

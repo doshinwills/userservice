@@ -72,7 +72,7 @@ public class GroupVO {
 	@Override
 	public String toString() {
 		return "GroupVO [groupId=" + groupId + ", name=" + name + ", createdOn=" + createdOn + ", updatedOn="
-				+ updatedOn + "]";
+				+ updatedOn + ", rightList=" + rightList.size() + "]";
 	}
 
 }
