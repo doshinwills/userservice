@@ -1,102 +1,101 @@
 package com.doshin.service.user.model;
 
+import java.util.Date;
+
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name = "user")
 public class UserVO {
-	private int id;
+	private Integer userId;
 
-	private String usertype;
+	private String name;
 
-	private String firstname;
+	private String firstName;
 
-	private String lastname;
+	private String lastName;
 
-	private String address;
+	private Date createdOn;
 
-	private String username;
+	private Date updatedOn;
 
-	private String password;
+	UserPasswordVO userPassword = new UserPasswordVO();
 
 	public UserVO() {
 		super();
 	}
 
-	public UserVO(int id, String usertype, String firstname, String lastname, String address, String username,
-			String password) {
+	public UserVO(Integer userId, String name, String firstName, String lastName, Date createdOn, Date updatedOn,
+			UserPasswordVO userPassword) {
 		super();
-		if(id != 0)
-			this.id = id;
-		this.usertype = usertype;
-		this.firstname = firstname;
-		this.lastname = lastname;
-		this.address = address;
-		this.username = username;
-		this.password = password;
+		this.userId = userId;
+		this.name = name;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.createdOn = createdOn;
+		this.updatedOn = updatedOn;
+		this.userPassword = userPassword;
 	}
 
-
-
-	public int getId() {
-		return id;
+	public Integer getUserId() {
+		return userId;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setUserId(Integer id) {
+		this.userId = userId;
 	}
 
-	public String getUsertype() {
-		return usertype;
+	public String getName() {
+		return name;
 	}
 
-	public void setUsertype(String usertype) {
-		this.usertype = usertype;
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	public String getFirstname() {
-		return firstname;
+	public String getFirstName() {
+		return firstName;
 	}
 
-	public void setFirstname(String firstname) {
-		this.firstname = firstname;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
 
-	public String getLastname() {
-		return lastname;
+	public String getLastName() {
+		return lastName;
 	}
 
-	public void setLastname(String lastname) {
-		this.lastname = lastname;
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 
-	public String getAddress() {
-		return address;
+	public Date getCreatedOn() {
+		return createdOn;
 	}
 
-	public void setAddress(String address) {
-		this.address = address;
+	public void setCreatedOn(Date createdOn) {
+		this.createdOn = createdOn;
 	}
 
-	public String getUsername() {
-		return username;
+	public Date getUpdatedOn() {
+		return updatedOn;
 	}
 
-	public void setUsername(String username) {
-		this.username = username;
+	public void setUpdatedOn(Date updatedOn) {
+		this.updatedOn = updatedOn;
 	}
 
-	public String getPassword() {
-		return password;
+	public UserPasswordVO getUserPassword() {
+		return userPassword;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
+	public void setUserPassword(UserPasswordVO userPassword) {
+		this.userPassword = userPassword;
 	}
 
 	@Override
 	public String toString() {
-		return "UserVO [id=" + id + ", userType=" + usertype + ", firstname=" + firstname + ", lastname=" + lastname
-				+ ", address=" + address + ", username=" + username + ", password=" + password + "]";
+		return "UserVO [userId=" + userId + ", name=" + name + ", firstName=" + firstName + ", lastName=" + lastName
+				+ ", createdOn=" + createdOn + ", updatedOn=" + updatedOn + ", userPassword=" + userPassword + "]";
 	}
 
 }

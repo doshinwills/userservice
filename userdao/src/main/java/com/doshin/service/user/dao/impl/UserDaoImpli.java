@@ -34,7 +34,7 @@ public class UserDaoImpli implements UserDao {
 
 	public UserDO findByUserId(Integer userId) {
 		Criteria criteria = getSession().createCriteria(UserDO.class);
-		criteria.add(Restrictions.eq("id", userId));
+		criteria.add(Restrictions.eq("userId", userId));
 		return (UserDO) criteria.uniqueResult();
 	}
 

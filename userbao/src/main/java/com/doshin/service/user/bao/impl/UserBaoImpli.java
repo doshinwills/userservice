@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.doshin.service.user.bao.UserBao;
 import com.doshin.service.user.dao.UserDao;
 import com.doshin.service.user.dao.model.UserDO;
+import com.doshin.service.user.dao.model.UserPasswordDO;
 import com.doshin.service.user.model.UserVO;
 
 @Service("userBao")
@@ -20,7 +21,10 @@ public class UserBaoImpli implements UserBao {
 
 	public UserVO save(UserVO user) {
 		UserDO userDo = new UserDO();
+		UserPasswordDO userPasswordDO = new UserPasswordDO();
+		BeanUtils.copyProperties(user.getUserPassword(), userPasswordDO);
 		BeanUtils.copyProperties(user, userDo);
+		userDo.setUserPassword(userPasswordDO);
 		return findByUserId(userDao.save(userDo));
 	}
 
@@ -42,6 +46,7 @@ public class UserBaoImpli implements UserBao {
 		UserDO userDo = userDao.findByUserId(userId);
 		UserVO userVo = new UserVO();
 		BeanUtils.copyProperties(userDo, userVo);
+		BeanUtils.copyProperties(userDo.getUserPassword(), userVo.getUserPassword());
 		return userVo;
 	}
 
