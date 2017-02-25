@@ -27,36 +27,34 @@ CREATE TABLE public.user (
 );
 
 CREATE TABLE public.group (
-	id integer NOT NULL,
+	groupid integer NOT NULL,
 	name varchar(100) NOT NULL,
 	createdon date NOT NULL,
 	updatedon date NOT NULL,
-	PRIMARY KEY (id)
+	PRIMARY KEY (groupid)
 );
 
 CREATE TABLE public.right (
-	id integer NOT NULL,
+	rightid integer NOT NULL,
 	name varchar(100) NOT NULL,
 	createdon date NOT NULL,
 	updatedon date NOT NULL,
-	PRIMARY KEY (id)
+	PRIMARY KEY (rightid)
 );
 
 CREATE TABLE public.groupright (
 	groupid integer NOT NULL,
 	rightid integer NOT NULL ,
-	createdon date NOT NULL,
-	updatedon date NOT NULL,
 	PRIMARY KEY (groupid, rightid),
-	FOREIGN KEY (groupid) REFERENCES public.group(id),
-	FOREIGN KEY (rightid) REFERENCES public.right(id)
+	FOREIGN KEY (groupid) REFERENCES public.group(groupid),
+	FOREIGN KEY (rightid) REFERENCES public.right(rightid)
 );
 
 CREATE TABLE public.usergroup (
 	groupid integer NOT NULL,
 	userid integer NOT NULL ,
 	PRIMARY KEY (groupid, userid),
-	FOREIGN KEY (groupid) REFERENCES public.group(id),
+	FOREIGN KEY (groupid) REFERENCES public.group(groupid),
 	FOREIGN KEY (userid) REFERENCES public.user(userid)
 );
 

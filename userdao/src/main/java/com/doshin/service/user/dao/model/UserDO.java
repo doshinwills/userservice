@@ -53,7 +53,7 @@ public class UserDO {
 	@JoinColumn(name = "passwordid")
 	UserPasswordDO userPassword;
 	
-	@OneToMany(cascade = CascadeType.ALL)
+	@OneToMany
 	@JoinTable(name="usergroup", 
 		joinColumns=@JoinColumn(name="userid"),
 		inverseJoinColumns=@JoinColumn(name="groupid"))
