@@ -55,7 +55,6 @@ public class GroupTest {
 		invocationBuilder.header(HttpHeaders.AUTHORIZATION, "Basic Z3dpbGxzOnBhc3M=");
 
 		GroupVO groupVO = invocationBuilder.get(GroupVO.class);
-		System.out.println("Get - " + groupVO);
 
 	}
 

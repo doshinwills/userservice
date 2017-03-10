@@ -36,6 +36,12 @@ public class UserServiceImpl implements UserService{
 	public UserVO findByUserId(Integer userId) {
 		return userBao.findByUserId(userId);
 	}
+	
+	@Override
+	public void test(UserVO user) {
+		System.out.println("User Recived");
+		System.out.println(user);
+	}
 
 
 

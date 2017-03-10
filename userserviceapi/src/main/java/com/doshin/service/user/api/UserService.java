@@ -36,5 +36,10 @@ public interface UserService {
 	@Path("/findByUserId/{userid}")
 	@Produces(MediaType.APPLICATION_XML)
 	public UserVO findByUserId(@PathParam("userid") Integer userId);
+	
+	@POST
+	@Path("/test")
+	@Consumes(MediaType.APPLICATION_XML)
+	public void test(UserVO user);
 
 }

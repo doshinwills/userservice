@@ -1,4 +1,6 @@
 http://localhost:8080/userserviceweb/rest/user/save
+Content-Type: application/xml
+Authorization: Basic Z3dpbGxzOnBhc3M=
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <user>
 	<createdOn>2017-02-22T00:00:00-08:00</createdOn>
